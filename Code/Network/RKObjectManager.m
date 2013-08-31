@@ -448,7 +448,7 @@ static NSString *RKMIMETypeFromAFHTTPClientParameterEncoding(AFHTTPClientParamet
                 return nil;
             }
             // Ensure that a single object inputted as an array is emitted as an array when serialized
-            BOOL inArray = ([object isKindOfClass:[NSArray class]] && [object count] == 1);
+            BOOL inArray = YES; //([object isKindOfClass:[NSArray class]] && [object count] == 1);
             [objectParameters addParameters:parametersForObject atRootKeyPath:requestDescriptor.rootKeyPath inArray:inArray];
         }
     }
