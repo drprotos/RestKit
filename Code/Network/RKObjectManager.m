@@ -125,7 +125,7 @@ extern NSString *RKStringDescribingRequestMethod(RKRequestMethod method);
             [NSException raise:NSInvalidArgumentException format:@"Unexpected argument of type '%@': expected an NSDictionary or NSArray.", [value class]];
         }
     } else {
-        [self.parameters setObject:(inArray ? @[ nonNestedParameters ] : nonNestedParameters) forKey:rootKey];
+        [self.parameters setObject:(inArray ? [@[ nonNestedParameters ] mutableCopy] : nonNestedParameters) forKey:rootKey];
     }
 }
 
